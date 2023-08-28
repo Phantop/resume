@@ -1,0 +1,189 @@
+\documentclass{article}
+
+\usepackage{titlesec} % Makes a section for the title
+\usepackage{titling} % Allows you to format the title
+\usepackage{sqrcaps} % Nice formatting for capitalized text
+\usepackage{geometry} % Allows us to modify page setup
+\usepackage{hyperref} % Required for hyperlinks
+\usepackage[dvipsnames]{xcolor} % Proper color support
+\usepackage[parfill]{parskip} % Remove paragraph indentation
+\usepackage{ifthen} % Required for ifthenelse statements
+\usepackage{fontawesome5}
+\pagestyle{empty} % Suppress page numbers
+\raggedright % Fixes line wrapping
+\renewcommand{\familydefault}{\sfdefault}
+
+%----------------------------------------------------------------------------------------
+%	PAGE FORMATTING
+%----------------------------------------------------------------------------------------
+\geometry{ % Page layout setup
+    letterpaper,
+    left=.4in,
+    top=.4in,
+    bottom=.4in,
+    right=.4in
+}
+
+\hypersetup{ % Hyperlink layout setup
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=RoyalPurple,
+    pdfpagemode=FullScreen,
+}
+
+\titleformat{\section}{\vspace{0.5em}\LARGE\bfseries}{}{0em}{}[\titlerule] % Sections have largest text and underline
+\titleformat{\subsection}{\bfseries\Large}{}{0em}{} % Subsections are bolded and large
+\titleformat{\subsubsection}[runin]{\bfseries}{}{0em}{} % Subsubsections are appended to the end of subsections
+
+%----------------------------------------------------------------------------------------
+%	TITLE FORMATTING
+%----------------------------------------------------------------------------------------
+
+\author{Julie Hakimi} % Change this to your name
+
+\renewcommand{\maketitle}{
+    \begin{center}
+        {\huge\bfseries\theauthor} \\ % Renders your name
+        hakimj2@rpi.edu | +1(516)512-3203 | phantop@tuta.io\\
+        \faGithub\ \href{https://github.com/Phantop}{github.com/Phantop} % Github URL
+        |\ \faLinkedin\ \href{https://www.linkedin.com/in/julie-hakimi/}{linkedin.com/in/julie-hakimi} % Linkedin URL
+        | \href{https://july.fly.dev}{july.fly.dev} % Forgejo URL
+    \end{center}
+    \vspace{-2.5em} % Add some whitespace
+}
+%----------------------------------------------------------------------------------------
+%	SECTION FORMATTING
+%----------------------------------------------------------------------------------------
+
+\newenvironment{experience}[5]{ % 4 input arguments - company name, year(s) employed, job title and location
+    \vspace{.5em} % Add some whitespace
+    {\bf #1:} {#2} \hfill {#3} % Bold company name and date on the right
+    \hspace{-1.5em} % Add some whitespace
+    \ifthenelse{\equal{#4}{}}{}{ % If the third argument is not specified, don't print the job title and location line
+        \\
+        {\em #4} \hfill {\em #5} % Italic job title and location
+    }
+    \vspace{-.5em} % Add some whitespace
+}
+
+%----------------------------------------------------------------------------------------
+%	MACROS
+%----------------------------------------------------------------------------------------
+
+\newcommand{\rpi}{Rensselaer Polytechnic Institute}
+\newcommand{\gnn}{John L. Miller North High School}
+\newcommand{\loct}{Troy, NY}
+\newcommand{\locg}{Great Neck, NY}
+
+%----------------------------------------------------------------------------------------
+%	RESUME CONTENT
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+\vspace{-1em}
+\begin{experience}
+    {\rpi}{GPA: 3.59/4.0}{August 2021 - May 2025}{B.S. Computer Science, Computer and Systems Engineering; Minor in Sustainability Studies}{\loct}
+\end{experience}
+- \emph{Coursework:} Data Structures, Foundations of Computer Science,
+Introduction to Algorithms, Computer Components and Operations, Computer Architecture
+Networks and Operating Systems, Electric Circuits, Introduction to Electronics, Engineering Probability, Signals and Systems
+
+\begin{experience}
+    {John L. Miller North High School}{GPA: 93.9/100}{September 2017 - June 2021}{}{\locg}
+\end{experience}
+\vspace{-1em}
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
+\section{Projects}
+\vspace{-1em}
+\begin{experience}
+    {appdwarf}{Tool to compress and run programs using DwarFS\hfill
+    [Bash] \href{https://github.com/Phantop/appdwarf}{github.com/Phantop/appdwarf}}{February 2021 - Present}{}{}
+\end{experience}
+- Provides an AppImage-compatible tool utilizing the fast, highly compressed DwarFS filesystem to compress Linux software
+
+\begin{experience}
+    {Quatalog}{A tool to show when RPI courses have been previously offered
+    [C++/JS/Dart] \hfill\href{https://quatalog.com/}{quatalog.com}}{November 2022 - Present}{}{}
+\end{experience}
+\vspace{-1em}
+- Displays all past semester offerings of a given course, including previous professors and class sizes\\
+- Currently co-developer alongside two other students, working on a new backend scraper and a frontend rewrite
+
+\begin{experience}
+    {Solus Project}{Maintainer of multiple packages for the Solus Operating System
+    [YAML] \hfill\href{https://getsol.us/}{getsol.us}}{June 2020 - Present}{}{}
+\end{experience}
+
+\begin{experience}
+    {Arithme.Tech}{HackRPI educational game entry by a 4-person team [C\#]}{Won first prize in November 2021}{}{}
+\end{experience}
+\vspace{-1em}  
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+\section{Experience}
+\vspace{-1em}
+\begin{experience}
+    {Galil Foods}{}{June 2021 - August 2021, May 2022 - August 2022}
+    {Electrical and Computer Systems Intern}{Hauppauge, NY}
+\end{experience}
+- Managed main office computer networking and operating systems\\
+- Developed a new corporate website at \href{https://galilbrands.com/}{galilbrands.com}\\
+- Performed important server room and warehouse machinery maintenance
+
+\vspace{-1em}
+%----------------------------------------------------------------------------------------
+%	LEADERSHIP SECTION
+%----------------------------------------------------------------------------------------
+\section{Leadership}
+\vspace{-1em}
+\begin{experience}
+    {Alpha Delta Phi Society @ RPI}{}{May 2022 - Present}{Vice President}{\loct}
+\end{experience}
+- In charge of communication with graduate members of the Rensselaer chapter of the Society.
+
+\begin{experience}
+    {Great Neck North High Swim Team @ \gnn}{}{November 2018 - November 2020}{Captain}{\locg}
+\end{experience}
+
+\begin{experience}
+    {Great Neck North High Robotics Team @ \gnn}{}{November 2017 - June 2021}{Lead Programmer}{\locg}
+\end{experience}
+- Helped team win First Tech Challenge qualifier in Syosset, NY in March 2020
+\vspace{-1em}
+%----------------------------------------------------------------------------------------
+%	SKILLS SECTION
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\vspace{-.5em}
+\textbf{Linux Utilities:} Docker, Phabricator, Git, Solbuild, FFMpeg, ImageMagick, Pandoc, Octave
+\\\textbf{Networking Protocols:} SSH, FTP, Samba, DLNA
+\\\textbf{Programming Languages:} C, C++, MIPS ASM, Bash, Fish, \LaTeX, Python, HTML, CSS, YAML
+\\\textbf{Software:} MatLab, Siemens NX, LibreOffice, Adobe Creative Suite, GIMP
+\\\textbf{Web and Cloud Services:} Heroku, Fly, GitHub, Gitea, Miniflux
+\vspace{-1em}
+
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+\section{Honors \& Awards}
+\vspace{-1em}
+\begin{experience} {Rensselaer Junior Recognition Certificate}{RPI, \textit{\loct}}{February, 2023}{}{} \end{experience}
+\vspace{-.5em}
+\begin{experience} {Rensselaer Dean's Honor List}{RPI, \textit{\loct}}{December 2021 - Present}{}{} \end{experience}
+\vspace{-.5em}
+\begin{experience} {Rensselaer National Merit Scholarship}{RPI, \textit{\loct}}{May 2021}{}{} \end{experience}
+\vspace{-.5em}
+\begin{experience} {Rensselaer Leadership Award}{RPI, \textit{\loct}}{May 2021}{}{} \end{experience}
+\end{document}
