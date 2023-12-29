@@ -1,40 +1,53 @@
-#set page(margin: .9cm, "us-letter")
-#set text(font: "Ubuntu", fill: black, hyphenate: false, size: 9.5pt)
+#set page(margin: .3in, "us-letter")
+#set text(font: "Ubuntu", fill: black, size: 9.75pt)
 #show heading: set text(font: "Ubuntu", weight: "bold")
+#show link: set text(fill: rgb("#623f98"))
 #let separator = {v(-3pt); line(length: 100%, stroke: 0.4pt); v(-6pt)}
+#let icon(file) = [#box(image(height: 10pt, file + ".svg"))]
 
 
 /* Heading */
 #[
 #set align(center)
 #text(14pt)[= Julie Hakimi]
-#v(-4pt)
-#link("mailto:phantop@tuta.io")[phantop\@tuta.io] | she/her | +1(516)512-3203 | #link("mailto:hakimj2@rpi.edu")[hakimj2\@rpi.edu] \
+#v(-6pt)
+#link("mailto:phantop@tuta.io")[#icon("email") phantop\@tuta.io] |
+#link("mailto:hakimj2@rpi.edu")[#icon("email") hakimj2\@rpi.edu] |
+#link("tel:15165123203")[#icon("phone") +1(516)512-3203] |
+#link("https://en.pronouns.page/")[#icon("venus") she/her]
 #v(-8pt)
-#show link: set text(fill: rgb("#623f98"))
-#link("https://github.com/phantop")[#box(image(height: 10pt, "github.svg")) github.com/phantop] |
-#link("https://linkedin.com/in/julie-hakimi")[#box(image(height: 10pt, "linkedin.svg")) linkedin.com/in/julie-hakimi]
-#v(-10pt)
+#link("https://github.com/phantop")[#icon("github") github.com/phantop] |
+#link("https://linkedin.com/in/julie-hakimi")[#icon("linkedin") linkedin.com/in/julie-hakimi]
+#v(-15pt)
 ]
 
 
 /* Resume Content */
-#let rpi = [Rensselaer Polytechnic Institute (RPI)]
-#let loct = [Troy, NY]
-#let locg = [Great Neck, NY]
 #let gnn = [John L. Miller Great Neck North High School]
+#let locg = [Great Neck, NY]
+#let loct = [Troy, NY]
+#let rpi = [Rensselaer Polytechnic Institute]
 #let hf = [#h(1fr)]
-#show link: set text(fill: rgb("#623f98"))
+
 
 = Education
 #separator
 
-*#rpi:* GPA: 3.73 #hf August 2021 - May 2024\
+*#rpi (RPI):* GPA: 3.73 #hf August 2021 - May 2024\
 B.S. in Computer Science; Computer and Systems Engineering (Dual Major) #hf #loct
-- _Coursework:_ Introduction to Algorithms, Computer Architecture
-  Networks and Operating Systems, Introduction to Electronics, Signals and Systems, Operating Systems,
-  Principles of Software, Database Systems, Modern Binary Exploitation, Microprocessor Systems,
-  Network Programming, ECSE Capstone, Programming Languages
+- _Coursework:_
+ Operating Systems,
+ Modern Binary Exploitation,
+ Microprocessor Systems,
+ Principles of Software,
+ Database Systems,
+ Network Programming,
+ Engineering Capstone,
+ Introduction to Electronics,
+ Programming Languages,
+ Introduction to Algorithms,
+ Computer Architecture,
+ Signals and Systems
 
 
 = Projects
@@ -81,30 +94,67 @@ _Electrical and Computer Systems Intern_ #hf Hauppauge, NY
 = Leadership
 #separator
 
-*Alpha Delta Phi Society \@ #rpi:* #hf May 2022 - Present\
-_Vice President_ #hf #loct
-- In charge of communication with graduate members of the Rensselaer chapter of the Society.
+*Alpha Delta Phi Society \@ #rpi:* _Vice President_ #hf May 2022 - Present\
+- In charge of communication with graduate members of the Rensselaer chapter of the Society. #hf #loct
 
 // *Swim Team \@ #gnn:* #hf November 2018 - November 2020\ _Captain_ #hf #locg
 
-*Robotics Team \@ #gnn:* #hf November 2017 - June 2021\
-_Lead Programmer_ #hf #locg
-- Helped team win First Tech Challenge qualifier in Syosset, NY in March 2020
+*Robotics Team \@ #gnn:* _Lead Programmer_ #hf November 2017 - June 2021\
+- Helped team win First Tech Challenge qualifier in Syosset, NY in March 2020 #hf #locg
 
 
 = Skills
 #separator
 
-- *Linux Utilities:* Docker, FFMpeg, Git, ImageMagick, Octave, Pandoc, Phabricator, Qemu, Solbuild
-- *Networking Protocols:* DLNA, FTP, REST APIs, Samba, SSH, Unix Sockets
-- *Programming Languages:* ARM ASM, Bash, C, C++, CSS, C\#, Fish, HTML, Java, LaTeX, MIPS ASM, PHP, Python, x86 ASM, YAML
-- *Software:* Adobe Creative Suite, GIMP, LibreOffice, MatLab, Siemens NX
-- *Web and Cloud Services:* Fly, GitHub, Gitea, Heroku, Miniflux
+- *Linux Utilities:* Docker,
+ FFMpeg,
+ Git,
+ ImageMagick,
+ Octave,
+ Pandoc,
+ Phabricator,
+ Qemu,
+ Solbuild
+- *Networking Protocols:*
+ DLNA,
+ FTP,
+ REST APIs,
+ Samba,
+ SSH,
+ Unix Sockets
+- *Programming Languages:*
+ ASM,
+ Bash,
+ C,
+ C++,
+ CSS,
+ C\#,
+ Fish,
+ HTML,
+ Java,
+ LaTeX,
+ PHP,
+ Python,
+ YAML
+- *Software:*
+ Adobe Creative Suite,
+ GIMP,
+ LibreOffice,
+ MatLab,
+ Siemens NX
+- *Web and Cloud Services:*
+ Fly,
+ GitHub,
+ Gitea,
+ Heroku,
+ Miniflux
 
 
 = Honors & Awards
+#separator
 
-- *Rensselaer Dean's Honor List:* RPI, #loct #hf December 2021 - May 2024
-- *Rensselaer Junior Recognition Certificate:* RPI, #loct #hf February 2023
-- *Rensselaer National Merit Scholarship:* RPI, #loct #hf May 2021
-- *Rensselaer Leadership Award:* RPI, #loct #hf May 2021
+*#rpi*: #hf #loct
+- _Dean's Honor List:_ #hf December 2021 - May 2024
+- _Junior Recognition Certificate:_ #hf February 2023
+- _National Merit Scholarship:_ #hf May 2021
+- _Leadership Award:_ #hf May 2021
