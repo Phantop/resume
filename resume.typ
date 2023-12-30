@@ -1,10 +1,10 @@
 #set page(margin: .3in, "us-letter")
-#set text(font: "Ubuntu", fill: black, size: 9.75pt)
-#show heading: set text(font: "Ubuntu", weight: "bold")
+#set text(font: "Ubuntu", size: 9.75pt)
+#show heading: set text(weight: "bold")
 #show link: set text(fill: rgb("#623f98"))
-#let separator = {v(-3pt); line(length: 100%, stroke: 0.4pt); v(-6pt)}
 #let icon(file) = [#box(image(height: 7.2pt, "icons/" + file + ".svg"))]
 #let email(addr) = [#link("mailto:" + addr)[#icon("email") #addr] |]
+#let separator = [#v(-3pt) #line(length: 100%, stroke: 0.4pt) #v(-8pt)]
 
 
 /* Heading */
