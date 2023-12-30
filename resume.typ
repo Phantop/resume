@@ -1,11 +1,21 @@
 #set page(margin: .3in, "us-letter")
 #set text(font: "Ubuntu", size: 9.75pt)
 #show heading: set text(weight: "bold")
-#show link: set text(fill: rgb("#623f98"))
+
 #let icon(file) = [#box(image(height: 7.2pt, "icons/" + file + ".svg"))]
 #let email(addr) = [#link("mailto:" + addr)[#icon("email") #addr] |]
+#let lang(name) = [#link("https://github.com/Phantop?tab=repositories&language=" + name)[#name]]
+
+#let hf = [#h(1fr)]
+#let date = [#hf #icon("calendar")]
+#let gnn = [John L. Miller Great Neck North High School]
+#let locg = [#icon("location") Great Neck, NY]
+#let loct = [#icon("location") Troy, NY]
+#let rpi = [Rensselaer Polytechnic Institute]
 #let separator = [#v(-3pt) #line(length: 100%, stroke: 0.4pt) #v(-8pt)]
 
+#[ // workaround for issue #351 (show: set override broken)
+#show link: set text(rgb("#623f98"))
 
 /* Heading */
 #[
@@ -24,14 +34,6 @@
 
 
 /* Resume Content */
-#let gnn = [John L. Miller Great Neck North High School]
-#let locg = [#icon("location") Great Neck, NY]
-#let loct = [#icon("location") Troy, NY]
-#let rpi = [Rensselaer Polytechnic Institute]
-#let hf = [#h(1fr)]
-#let date = [#hf #icon("calendar")]
-
-
 = Education
 #separator
 
@@ -106,6 +108,7 @@ _Electrical and Computer Systems Intern_ #hf #icon("location") Hauppauge, NY
 *Robotics Team \@ #gnn:* _Lead Programmer_ #date November 2017 - June 2021\
 - Helped team win First Tech Challenge qualifier in Syosset, NY in March 2020 #hf #locg
 
+]
 
 = Skills
 #separator
@@ -130,22 +133,22 @@ _Electrical and Computer Systems Intern_ #hf #icon("location") Hauppauge, NY
  SSH,
  Unix Sockets
 - *Programming Languages:*
- ASM,
- Bash,
- C,
- C++,
- CSS,
- C\#,
- Fish,
- HTML,
- Java,
- JavaScript,
- LaTeX,
- PHP,
- Python,
- SQL,
- Typst,
- YAML
+ #lang("ASM"),
+ #lang("Bash"),
+ #lang("C"),
+ #lang("C++"),
+ #lang("CSS"),
+ #lang("C#"),
+ #lang("Fish"),
+ #lang("HTML"),
+ #lang("Java"),
+ #lang("JavaScript"),
+ #lang("LaTeX"),
+ #lang("PHP"),
+ #lang("Python"),
+ #lang("SQL"),
+ #lang("Typst"),
+ #lang("YAML")
 - *Software:*
  Adobe Creative Suite,
  GIMP,
