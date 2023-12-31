@@ -1,20 +1,20 @@
 /* Styling and Macros */
 #set page(margin: .3in, "us-letter")
 #set text(font: "Ubuntu", size: 9.75pt)
-#show heading: set text(weight: "bold")
+#show heading: it => { set text(weight: "bold"); v(-6pt); it }
 
 #let icon(file) = {box(image(height: 7.2pt, "icons/" + file + ".svg"))}
 #let lang(name) = {link("https://github.com/phantop?tab=repositories&language=" + name)[#name]}
 #let plink(url, label) = {show link: set text(rgb("#623f98")); link(url)[#label]}
 #let email(addr) = [#plink("mailto:" + addr)[#icon("email") #addr] |]
 
-#let hf = {h(1fr)}
-#let date = {hf; icon("calendar")}
+#let hf = { h(1fr) }
+#let date = { hf; icon("calendar") }
 #let gnn = [John L. Miller Great Neck North High School]
 #let rpi = [Rensselaer Polytechnic Institute]
 #let locg = [#icon("location") Great Neck, NY]
 #let loct = [#icon("location") Troy, NY]
-#let sep = {v(-3pt);line(length: 100%, stroke: 0.4pt);v(-8pt)}
+#let sep = { v(-3pt); line(length: 100%, stroke: 0.4pt); v(-8pt)}
 
 
 /* Heading */
@@ -29,7 +29,7 @@
 #v(-8pt)
 #plink("https://github.com/phantop")[#icon("github") github.com/phantop] |
 #plink("https://linkedin.com/in/julie-hakimi")[#icon("linkedin") linkedin.com/in/julie-hakimi]
-#v(-15pt)
+#v(-9pt)
 ]
 
 
@@ -102,11 +102,12 @@ _Electrical and Computer Systems Intern_ #hf #icon("location") Hauppauge, NY
 
 *Alpha Delta Phi Society \@ #rpi:* _Vice President_ #date May 2022 - Present\
 - In charge of communication with graduate members of the Rensselaer chapter of the Society. #hf #loct
+- Designed new chapter website as de facto sysadmin at #plink("https://rpiadps.com")[rpiadps.com]
 
-// *Swim Team \@ #gnn:* #date November 2018 - November 2020\ _Captain_ #hf #locg
+*Robotics Team \@ #gnn:* #hf #locg #date November 2017 - June 2021\
+- _Lead Programmer_ for team win First Tech Challenge qualifier in Syosset, NY in March 2020
 
-*Robotics Team \@ #gnn:* _Lead Programmer_ #date November 2017 - June 2021\
-- Helped team win First Tech Challenge qualifier in Syosset, NY in March 2020 #hf #locg
+*Swim Team _Captain_ \@ #gnn:* #hf #locg #date November 2018 - November 2020
 
 
 = Skills
